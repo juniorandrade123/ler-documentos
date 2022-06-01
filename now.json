@@ -1,6 +1,6 @@
 {
-    "version": 2,
-    "name": "ocr-tria",
+    "version": 3,
+    "name": "ler-documentos",
     "builds": [
       {
         "src": "dist/main.js",
