@@ -34,6 +34,7 @@ let AppService = class AppService {
         this.readPdf = (file) => {
             return new Promise((resolve, reject) => {
                 new PdfReader().parseFileItems(file.path, function (err, item) {
+                    console.log(item);
                     if (err) {
                         reject(err);
                     }
@@ -48,6 +49,7 @@ let AppService = class AppService {
             });
         };
         this.extractPdf = async (file) => {
+            textReturnPdf = '';
             await this.readPdf(file);
             return textReturnPdf;
         };

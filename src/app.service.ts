@@ -28,7 +28,7 @@ export class AppService {
     return textReturn;
   }
 
-  readPdf = (file: Express.Multer.File) => {
+  readPdf = (file: Express.Multer.File) => {    
     return new Promise((resolve, reject) => {
       new PdfReader().parseFileItems(file.path, function (err, item) {
         if (err) {
@@ -44,6 +44,7 @@ export class AppService {
   }
 
   extractPdf = async (file) => {
+    textReturnPdf = '';
     await this.readPdf(file);
     return textReturnPdf;
   }
